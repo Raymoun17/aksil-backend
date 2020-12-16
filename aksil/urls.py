@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from api.views import BoardViewSet, PersonViewSet, PostViewSet, CommentViewSet
+from api.views import BoardViewSet, PersonViewSet, PostViewSet, CommentViewSet, CurrentTimeViewSet
 
 
 router = routers.DefaultRouter()
@@ -14,4 +14,5 @@ router.register('comments', CommentViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('api/currenttime/', CurrentTimeViewSet.as_view()),
 ]
