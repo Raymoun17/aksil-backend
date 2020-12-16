@@ -25,7 +25,11 @@ SECRET_KEY = 'bkwu6@+ge2v($japyv!sa00f6i&k9&a0#$!2k9(p&#!98m!!je'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "192.168.0.101",
+    'aksil.herokuapp.com',
+]
 
 
 # Application definition
@@ -37,6 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'django_filters',
+    'rest_framework.authtoken',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -113,8 +121,27 @@ USE_L10N = True
 
 USE_TZ = True
 
+#custom auth model
+AUTH_USER_MODEL = 'api.Person'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    #'DEFAULT_RENDERER_CLASSES': (
+    #    'rest_framework.renderers.JSONRenderer',
+    #)
+    #,
+    
+    #'DEFAULT_AUTHENTICATION_CLASSES': [
+    #    'rest_framework.authentication.BasicAuthentication',
+    #    'rest_framework.authentication.SessionAuthentication',
+    #    'rest_framework.authentication.TokenAuthentication',
+    #]
+    #,
+    #'DEFAULT_PERMISSION_CLASSES': (
+    #    'rest_framework.permissions.IsAuthenticated',
+    #),
+}
