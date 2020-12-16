@@ -142,3 +142,6 @@ m.bat
 mk.bat
 fm.bat
 run.bat
+
+#DJANGO SQL3 DB
+db.sqlite3
