@@ -8,6 +8,9 @@ from django.utils import timezone
 class Board(models.Model):
     name = models.CharField(max_length=16)
 
+    def __str__(self):
+        return self.name
+
 
 class Person(AbstractUser, models.Model):
     profile_pic = models.TextField(blank=True)
