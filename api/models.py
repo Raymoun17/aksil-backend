@@ -33,7 +33,7 @@ class Post(models.Model):
         return self.title
 
     class Meta:
-        ordering = ['date']
+        ordering = ['-date']
 
 
 class Comment(models.Model):
